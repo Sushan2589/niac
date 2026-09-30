@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronRight, Calendar, MapPin, Users } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Calendar,
+  MapPin,
+  Users,
+  BriefcaseBusiness,
+} from "lucide-react";
 import { useServices } from "./hooks/usePracticeAreas";
 import { useBlogs } from "./hooks/useBlogs";
 import { useBulletins } from "./hooks/useBulletins";
@@ -74,14 +81,15 @@ function HeroSection() {
         <div className="mb-6 inline-flex items-center space-x-3 bg-white/10 px-4 py-2 rounded-full border border-white/20 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-[#c9a961] animate-pulse"></span>
           <span className="text-white text-2xl font-sans text-md tracking-widest font-bold">
-             Reaching the Pinnacle of ADR in a Changing World. 
+            Reaching the Pinnacle of ADR in a Changing World.
           </span>
         </div>
 
         {/* Subtitle */}
         <p className="text-white font-sans text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-        NIAC and AIADR cordially invites abritrators, mediators, jurists, lawyers, engineers, management personnels, chartered accountants and academics to participate in this historic event.
-
+          NIAC and AIADR cordially invites abritrators, mediators, jurists,
+          lawyers, engineers, management personnels, chartered accountants and
+          academics to participate in this historic event.
         </p>
 
         {/* Hero CTAs */}
@@ -94,13 +102,17 @@ function HeroSection() {
           >
             Register Now
           </Link>
-          <Link href="/events/asia-adr-summit-2026-2nd-nepal-adr-week#register" target="_blank" className="border-2 border-white/40 text-white px-10 py-5 rounded font-sans text-sm hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest min-w-[220px] font-semibold text-center cursor-default">
-           Learn More 
+          <Link
+            href="/events/asia-adr-summit-2026-2nd-nepal-adr-week#register"
+            target="_blank"
+            className="border-2 border-white/40 text-white px-10 py-5 rounded font-sans text-sm hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest min-w-[220px] font-semibold text-center cursor-default"
+          >
+            Learn More
           </Link>
         </div>
 
         {/* Event Highlights (Glass Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg text-white">
             <Calendar className="text-[#c9a961] mb-4 w-10 h-10 mx-auto" />
             <h3 className="font-bold text-lg mb-1">5-7 March 2027</h3>
@@ -116,12 +128,23 @@ function HeroSection() {
             <h3 className="font-bold text-lg mb-1">45+ Speakers</h3>
             <p className="text-sm opacity-70">Elite Networking Opportunities</p>
           </div>
+          <Link
+            href="/supporting-organizations"
+            onClick={() => setOpen(true)}
+            className="h-full w-full min-w-0 flex flex-col items-center justify-start text-center
+             bg-white/5 backdrop-blur-md border border-white/10 p-4 sm:p-6 rounded-lg text-white
+             cursor-pointer transition hover:bg-white/10 hover:border-[#c9a961]/50 hover:-translate-y-1
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a961]"
+          >
+            <BriefcaseBusiness className="text-[#c9a961] mb-3 w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
+            <h3 className="font-bold text-base sm:text-lg leading-tight mb-1">30+ Partners</h3>
+<p className="text-xs sm:text-sm opacity-70 leading-snug">Supporting Organizations</p>
+          </Link>
         </div>
       </div>
 
       {/* Bottom Fade */}
     </section>
-
   );
 }
 
@@ -710,7 +733,7 @@ export default function Home() {
       <HeroSection />
       <CtaSection />
       <ServicesSection />
-      
+
       <WhyChooseUs />
       <LatestNews />
       <QuoteSection />
