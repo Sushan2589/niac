@@ -477,6 +477,17 @@ def send_event_booking_email_async(booking):
             participant_type_label = dict(booking.PARTICIPANT_TYPE_CHOICES).get(booking.participant_type, 'Nepali Participant')
             total_display = booking.total_amount_display or '—'
 
+            from django.utils.html import escape
+
+            address = escape(booking.address or '')
+            city = escape(booking.city or '')
+            state = escape(booking.state or '')
+            zip_code = escape(booking.zip_code or '')
+            country = escape(booking.country or 'N/A')
+            comment = escape(booking.comment or 'None')
+
+            full_address = ', '.join(p for p in [address, city, state, zip_code] if p) or 'N/A'
+
             # Email to admin
             admin_subject = f"New Reg #{registration_id} - {booking.name} for {event_title}"
             admin_html_message = f"""
@@ -549,6 +560,21 @@ def send_event_booking_email_async(booking):
                             <div class="info-block">
                                 <div class="info-label">Company</div>
                                 <div class="info-value">{booking.company if booking.company else 'N/A'}</div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="info-label">Address</div>
+                                <div class="info-value">{full_address}</div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="info-label">Country</div>
+                                <div class="info-value">{country}</div>
+                            </div>
+
+                            <div class="info-block">
+                                <div class="info-label">Special Requests / Comments</div>
+                                <div class="info-value" style="white-space:pre-wrap;">{comment}</div>
                             </div>
 
                             <div class="info-block">

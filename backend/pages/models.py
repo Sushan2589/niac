@@ -331,7 +331,7 @@ class EventBooking(models.Model):
     country = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     comment = models.TextField(null=True, blank=True)
-    company = models.CharField(null=True, blank=True)
+    company = models.CharField(max_length=255,null=True, blank=True)
     reference_code = models.CharField(max_length=255, blank=True, null=True, help_text="Wire transfer reference number")
     status = models.CharField(max_length=30, choices=STATUS_CHOICES, default='pending')
     is_verified = models.BooleanField(default=False)
