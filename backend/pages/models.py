@@ -338,7 +338,7 @@ class EventBooking(models.Model):
     proof_file = models.FileField(upload_to='proofs/', blank=True, null=True, help_text="Upload wire transfer receipt / MT103")
     proof_uploaded_at = models.DateTimeField(null=True, blank=True)
     lookup_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, help_text="Unique token for returning to this booking")
-    admin_notes = models.TextField(blank=True, help_text="Admin notes for bank matching")
+    admin_notes = models.TextField(blank=True, help_text="Admin notes for bank match")
 
     def save(self, *args, **kwargs):
         if not self.registration_id:
