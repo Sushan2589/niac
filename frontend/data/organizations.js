@@ -35,5 +35,5 @@ export const organizations = [
   {name: "CNA Chile", logo:"/logos/CNAchile.png", url:"https://www.cna.cl/"},
   {name: "PDRC", logo:"/logos/PDRC-Logo.png", url:"https://pdrci.org/"},
   {name: "LATCAM", logo:"/logos/LATCAM-logo.png", url:"https://www.latcam.com.py/"},
-  
+  {name: "DELOS", logo:"/logos/DELOS-logo.png", url:"https://delosdr.org/"},
 ];
