@@ -2,22 +2,12 @@ import NiacHeader from './components/NiacHeader';
 import NiacFooter from './components/NiacFooter';
 import LenisScroll from './components/LenisScroll';
 import './globals.css';
-import { Inter, Playfair_Display } from 'next/font/google';
+
 import { baseUrl } from '@/lib/seo';
 import EventReschedulePopup from './components/EventReschedulePopup';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/playfair-display';
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-inter',
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-playfair',
-});
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -53,7 +43,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfairDisplay.variable} bg-white text-black`}>
+      <body className="bg-white text-black">
         <LenisScroll />
         <NiacHeader />
         <EventReschedulePopup />

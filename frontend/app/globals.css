@@ -6,6 +6,9 @@ html {
 }
 
 :root {
+ --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
   --background: #ffffff;
   --foreground: #111111;
   --brand: #f5f1ed;
