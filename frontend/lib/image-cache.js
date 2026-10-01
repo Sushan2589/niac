@@ -13,17 +13,32 @@ export async function cacheImage(remoteUrl) {
   if (!remoteUrl) return null;
 
   try {
-    // Create a deterministic filename from the URL
-    const hash = crypto.createHash('md5').update(remoteUrl).digest('hex');
-    const ext = getExtension(remoteUrl);
+    // R2 public URL
+    const R2_PUBLIC_URL =
+      'https://pub-6a8b798bea3849c8aa4beb569a2df606.r2.dev';
+
+    // Replace old CDN hostname with the current R2 public hostname
+    const normalizedUrl = remoteUrl.replace(
+      'https://cdn.niac.org.np',
+      R2_PUBLIC_URL
+    );
+
+    // Create a deterministic filename from the normalized URL
+    const hash = crypto
+      .createHash('md5')
+      .update(normalizedUrl)
+      .digest('hex');
+
+    const ext = getExtension(normalizedUrl);
     const filename = `${hash}${ext}`;
+
     const localPath = path.join(CACHE_DIR, filename);
     const publicPath = `/cached-images/${filename}`;
 
     // Check if already cached
     try {
       await fs.access(localPath);
-      return publicPath; // Already cached
+      return publicPath;
     } catch {
       // Not cached yet, download it
     }
@@ -31,11 +46,14 @@ export async function cacheImage(remoteUrl) {
     // Ensure cache directory exists
     await fs.mkdir(CACHE_DIR, { recursive: true });
 
-    // Download the image
-    const response = await fetch(remoteUrl);
+    // Download the image using the corrected URL
+    const response = await fetch(normalizedUrl);
+
     if (!response.ok) {
-      console.warn(`Failed to download image: ${remoteUrl} (${response.status})`);
-      return remoteUrl; // Fallback to original URL
+      console.warn(
+        `Failed to download image: ${normalizedUrl} (${response.status})`
+      );
+      return normalizedUrl;
     }
 
     const buffer = Buffer.from(await response.arrayBuffer());
@@ -43,8 +61,12 @@ export async function cacheImage(remoteUrl) {
 
     return publicPath;
   } catch (error) {
-    console.warn(`Error caching image ${remoteUrl}:`, error instanceof Error ? error.message : error);
-    return remoteUrl; // Fallback to original URL
+    console.warn(
+      `Error caching image ${remoteUrl}:`,
+      error instanceof Error ? error.message : error
+    );
+
+    return remoteUrl;
   }
 }
 
