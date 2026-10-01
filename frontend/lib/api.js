@@ -101,6 +101,10 @@ export async function fetchBlog(slug) {
     }
 
     const blog = await res.json();
+    console.log("BLOG BEFORE CACHE:", {
+  slug,
+  featured_image: blog.featured_image,
+});
     return cacheBlogImages(blog);
   } catch (error) {
     console.warn('Error fetching blog:', error instanceof Error ? error.message : error);

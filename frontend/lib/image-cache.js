@@ -9,6 +9,16 @@ const CACHE_DIR = path.join(process.cwd(), 'public', 'cached-images');
  * Returns the local path (e.g., /cached-images/abc123.jpg) that can be used in <img> tags.
  * If the image is already cached, returns the cached path immediately.
  */
+
+function normalizeImageUrl(url) {
+  if (!url) return url;
+
+  return url.replace(
+    'https://cdn.niac.org.np',
+    'https://pub-6a8b798bea3849c8aa4beb569a2df606.r2.dev'
+  );
+}
+
 export async function cacheImage(remoteUrl) {
   if (!remoteUrl) return null;
 
@@ -18,10 +28,12 @@ export async function cacheImage(remoteUrl) {
       'https://pub-6a8b798bea3849c8aa4beb569a2df606.r2.dev';
 
     // Replace old CDN hostname with the current R2 public hostname
-    const normalizedUrl = remoteUrl.replace(
-      'https://cdn.niac.org.np',
-      R2_PUBLIC_URL
-    );
+    const normalizedUrl = normalizeImageUrl(remoteUrl);
+
+    console.log('IMAGE CACHE:', {
+  original: remoteUrl,
+  normalized: normalizedUrl,
+});
 
     // Create a deterministic filename from the normalized URL
     const hash = crypto
@@ -90,6 +102,11 @@ export async function cacheTeamImages(team) {
  */
 export async function cacheBlogImages(blog) {
   if (!blog) return blog;
+
+   console.log('BLOG CACHE:', {
+    title: blog.title,
+    featured_image: blog.featured_image,
+  });
 
   const cached = { ...blog };
   if (cached.featured_image) {
