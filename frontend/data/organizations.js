@@ -36,4 +36,7 @@ export const organizations = [
   {name: "PDRC", logo:"/logos/PDRC-Logo.png", url:"https://pdrci.org/"},
   {name: "LATCAM", logo:"/logos/LATCAM-logo.png", url:"https://www.latcam.com.py/"},
   {name: "DELOS", logo:"/logos/DELOS-logo.png", url:"https://delosdr.org/"},
+  {name: "ISTAC", logo:"/logos/istac-logo.png", url:"https://istac.org/"},
+  {name: "IIAC", logo:"/logos/IIAC.png", url:"https://iiac.org/"},
+
 ];
