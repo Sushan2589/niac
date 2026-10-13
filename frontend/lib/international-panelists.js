@@ -22,19 +22,19 @@ export const internationalPanelists = [
   },
   */
 
-  {
-    slug: 'jean-pierre',
-    full_name: 'Jean Pierre Galván Ortiz',
-    professional_background: 'Arbitration & Investment',
-    job_title: '',
-    phone: '+51 990 287869 ',
-    email: 'jgalvan.phd@gmail.com',
-    short_bio: '',
-    about: '',
-    specializations: '', // Comma-separated areas of expertise.
-    photo_url: '',
-    cv_url: '', // Optional. Leave empty if no CV is available.
-  },
+  // {
+  //   slug: 'jean-pierre',
+  //   full_name: 'Jean Pierre Galván Ortiz',
+  //   professional_background: 'Arbitration & Investment',
+  //   job_title: '',
+  //   phone: '+51 990 287869 ',
+  //   email: 'jgalvan.phd@gmail.com',
+  //   short_bio: '',
+  //   about: '',
+  //   specializations: '', // Comma-separated areas of expertise.
+  //   photo_url: '',
+  //   cv_url: '', // Optional. Leave empty if no CV is available.
+  // },
 
 
 ];
