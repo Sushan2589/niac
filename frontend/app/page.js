@@ -138,7 +138,7 @@ function HeroSection() {
              focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a961]"
           >
             <Handshake className="text-[#c9a961] mb-3 w-8 h-8 sm:w-10 sm:h-10 shrink-0" />
-            <h3 className="font-bold text-base sm:text-lg leading-tight mb-1">30+ Partners</h3>
+            <h3 className="font-bold text-base sm:text-lg leading-tight mb-1">40+ Partners</h3>
 <p className="text-xs sm:text-sm opacity-70 leading-snug">Supporting Organizations</p>
           </Link>
         </div>
