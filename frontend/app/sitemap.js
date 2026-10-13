@@ -20,7 +20,7 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/teams`,
+      url: `${baseUrl}/team`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -40,7 +40,7 @@ export default async function sitemap() {
   ];
 
   const teamUrls = (teams || []).map((team) => ({
-    url: `${baseUrl}/teams/${team.slug}`,
+    url: `${baseUrl}/team/${team.slug}`,
     lastModified: team.updated_at || new Date(),
     changeFrequency: 'monthly',
     priority: 0.6,

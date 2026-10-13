@@ -45,14 +45,18 @@ export default function PanelistTable({ panelists }) {
               
               <td className="px-6 py-4 text-sm text-on-surface-variant">{p.phone || '-'}</td>
               <td className="px-6 py-4">
-                <a
-                  href={p.cv_url || `/team/${p.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.1em] uppercase text-tertiary hover:text-tertiary-container transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download
-                </a>
+                {p.cv_url ? (
+                  <a
+                    href={p.cv_url}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.1em] uppercase text-tertiary hover:text-tertiary-container transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a>
+                ) : (
+                  <span className="text-sm text-on-surface-variant">-</span>
+                )}
               </td>
             </tr>
           ))}

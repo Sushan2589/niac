@@ -1,9 +1,21 @@
 // Server-side API utility for static generation and ISR
 import { cacheTeamImages, cacheBlogImages, cacheServiceImages } from './image-cache';
+import { internationalPanelists } from './international-panelists';
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 
+function getLocalPanelists() {
+  return internationalPanelists.map((panelist) => ({
+    ...panelist,
+    id: `local-${panelist.slug}`,
+    panelist: 'International Panelist',
+    category: 'International Panelist',
+    is_active: true,
+  }));
+}
+
 export async function fetchTeams() {
+  const localPanelists = getLocalPanelists();
   try {
     const res = await fetch(`${BASE_URL}/team/`, {
       next: { revalidate: 60 },
@@ -11,20 +23,25 @@ export async function fetchTeams() {
 
     if (!res.ok) {
       console.error('Failed to fetch teams:', res.status);
-      return [];
+      return localPanelists;
     }
 
     const data = await res.json();
     const teams = data.results || data;
-    // Download and cache all team images at build ti
-    return Promise.all(teams.map(cacheTeamImages));
+    const localSlugs = new Set(localPanelists.map((panelist) => panelist.slug));
+    const backendTeams = teams.filter((team) => !localSlugs.has(team.slug));
+    const cachedTeams = await Promise.all(backendTeams.map(cacheTeamImages));
+    return [...cachedTeams, ...localPanelists];
   } catch (error) {
     console.warn('Error fetching teams from API:', error instanceof Error ? error.message : error);
-    return [];
+    return localPanelists;
   }
 }
 
 export async function fetchTeam(slug) {
+  const localPanelist = getLocalPanelists().find((panelist) => panelist.slug === slug);
+  if (localPanelist) return localPanelist;
+
   try {
     const res = await fetch(`${BASE_URL}/team/${slug}/`, {
       next: { revalidate: 60 },

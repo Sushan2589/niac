@@ -18,6 +18,18 @@ const nextConfig = {
         hostname: 'equitylawandco.pythonanywhere.com',
         pathname: '/media/**',
       },
+
+       // Google profile pictures (OAuth avatars)
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/a/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '/a-/**',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 2678400, // 31 days - images are already cached locally
