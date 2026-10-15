@@ -20,12 +20,12 @@ export default function SupportingOrganizationsPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10 items-center">
         {organizations.map((org) => {
           const logo = (
-            <div className="relative h-20 w-full">
+            <div className="relative mx-auto h-32 w-32">
               <Image
                 src={org.logo}
                 alt={org.name}
                 fill
-                sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
+                sizes="128px"
                 className="object-contain"
               />
             </div>

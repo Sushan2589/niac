@@ -1,8 +1,9 @@
 // data/organizations.js
 // Logos: save each file into public/logos/ using the filename below.
 export const organizations = [
+  {name:"APCAM", logo: "/logos/APCA.png", url:"https://apcam.asia/"}, // verified
   { name: "IAMC Hyderabad", logo: "/logos/IAMC.png", url: "https://iamch.org.in" }, // verified
-  { name: "Vietnam International Arbitration Centre (VIAC)", logo: "/logos/VIAC.png", url: "https://viac.vn" }, // verified
+  { name: "Vietnam International Arbitration Centre (VIAC)", logo: "/logos/VIAC.png", url: "https://viac.vn" },
   { name: "Vietnam Traders Arbitration", logo: "/logos/VTA.png", url: "https://vtac.vn/arbitration" },
   { name: "Maldives International Arbitration Centre", logo: "/logos/MIAC.png", url: "https://miac.gov.mv" }, // verified
   { name: "KFCRI", logo: "/logos/KFCRI.png", url: "https://kfcri.org/" },
@@ -38,5 +39,6 @@ export const organizations = [
   {name: "DELOS", logo:"/logos/DELOS-logo.png", url:"https://delosdr.org/"},
   {name: "ISTAC", logo:"/logos/istac-logo.png", url:"https://istac.org/"},
   {name: "IIAC", logo:"/logos/IIAC.png", url:"https://iiac.org/"},
+  {name:"Sankalp", logo:"/logos/Sankalp.jpeg", url:"https://sankalp-aaobaatkare.org/"},
 
 ];
