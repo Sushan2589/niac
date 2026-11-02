@@ -4,7 +4,7 @@ import LenisScroll from './components/LenisScroll';
 import './globals.css';
 
 import { baseUrl } from '@/lib/seo';
-import EventReschedulePopup from './components/EventReschedulePopup';
+// import EventReschedulePopup from './components/EventReschedulePopup';
 import '@fontsource-variable/inter';
 import '@fontsource-variable/playfair-display';
 
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
       <body className="bg-white text-black">
         <LenisScroll />
         <NiacHeader />
-        <EventReschedulePopup />
+        {/* <EventReschedulePopup /> */}
         <main className="min-h-screen bg-white text-black">
           {children}
         </main>
