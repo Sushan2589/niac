@@ -96,7 +96,7 @@ function HeroSection() {
         {/* Hero CTAs */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16">
           <Link
-            href="/events/asia-adr-summit-2026-2nd-nepal-adr-week/register"
+            href="https://register.niac.org.np/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-b from-[#D4AF37] to-[#C5A059] text-white px-10 py-5 rounded font-sans text-sm hover:scale-105 transition-all uppercase tracking-widest min-w-[220px] shadow-lg shadow-[#C5A059]/30 font-semibold text-center"
@@ -104,7 +104,7 @@ function HeroSection() {
             Register Now
           </Link>
           <Link
-            href="https://register.niac.org.np/"
+            href="/events/asia-adr-summit-2026-2nd-nepal-adr-week#register"
             target="_blank"
             className="border-2 border-white/40 text-white px-10 py-5 rounded font-sans text-sm hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest min-w-[220px] font-semibold text-center cursor-default"
           >
