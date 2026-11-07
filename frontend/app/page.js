@@ -104,7 +104,7 @@ function HeroSection() {
             Register Now
           </Link>
           <Link
-            href="/events/asia-adr-summit-2026-2nd-nepal-adr-week#register"
+            href="https://register.niac.org.np/"
             target="_blank"
             className="border-2 border-white/40 text-white px-10 py-5 rounded font-sans text-sm hover:bg-white/10 hover:border-white transition-all uppercase tracking-widest min-w-[220px] font-semibold text-center cursor-default"
           >
