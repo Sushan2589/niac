@@ -146,7 +146,7 @@ export const internationalPanelists = [
 {
   slug: 'sebastian-green-martinez',
   full_name: 'Sebastián Green Martínez',
-  professional_background: '',
+  professional_background: 'International Arbitration & Mediation',
   job_title: '',
   phone: '+34 659 295 152',
   email: 'sgreen@faculty.ie.edu',
@@ -160,7 +160,7 @@ export const internationalPanelists = [
 {
   slug: 'filip-balcerzak',
   full_name: 'Filip Balcerzak',
-  professional_background: '',
+  professional_background: 'International Arbitration & Legal Practice',
   job_title: '',
   phone: '+44 1895 266555 / +48 509 154 805',
   email: 'filip@balcerzak.com',
