@@ -36,5 +36,19 @@ export const internationalPanelists = [
   //   cv_url: '', // Optional. Leave empty if no CV is available.
   // },
 
+  {
+  slug: 'can-eken',
+  full_name: 'Dr Can Eken',
+  professional_background: 'Law & Arbitration',
+  job_title: '',
+  phone: '+44 7384 060326',
+  email: 'caneken.law@gmail.com',
+  short_bio: '',
+  about: '',
+  specializations: '',
+  photo_url: '',
+  cv_url: '/pdfs/panelists/Can EKEN_CV_4July2026.pdf',
+},
+
 
 ];

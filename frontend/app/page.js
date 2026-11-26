@@ -112,6 +112,8 @@ function HeroSection() {
           </Link>
         </div>
 
+
+
         {/* Event Highlights (Glass Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg text-white">
