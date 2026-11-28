@@ -112,7 +112,7 @@ export const internationalPanelists = [
     specializations:
       "Construction Arbitration, Construction Adjudication, International Arbitration, Mediation, Construction Engineering, Construction Contracts, NEC3 and NEC4 ECC Project Management",
     photo_url: "",
-    cv_url: "/pdfs/panelists/Albert.pdf",
+    cv_url: "",
   },
 
   {
